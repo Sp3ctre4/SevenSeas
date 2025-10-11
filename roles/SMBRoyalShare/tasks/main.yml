@@ -8,7 +8,9 @@
     name: "{{ share_name }}"
     path: "C:\\{{ share_name }}"
     description: "His Majesty's Royal Documents!"
-    full: Domain Users, Guest
+    full: Domain Users
+    change: Guest
+    rule_action: "add"
     state: present
 
 # Now that the Royal Share is created, populate it with a crazy ridiculous teir structure for no reason at all!

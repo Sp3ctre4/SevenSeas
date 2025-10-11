@@ -16,6 +16,7 @@
   - role: Kerberoast
   - role: ASREPRoast
   - role: LLMNRPoisoning
+  - role: SetExtendedACL
   - role: EnableDomainGuest
   - role: SMBRoyalShare
   - role: EnableRDP

@@ -1,3 +1,3 @@
 - name: Set SPN for NavySVC
   ansible.windows.win_powershell:
-    script: scripts/kerberoast.ps1
+    script: kerberoast.ps1

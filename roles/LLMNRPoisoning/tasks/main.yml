@@ -1,6 +1,6 @@
 - name: Copy LLMNR Script to DC
   ansible.windows.win_copy:
-    src: scripts/llmnr.ps1
+    src: llmnr.ps1
     dest: C:\Windows\Temp\llmnr-script.ps1
 
 - name: Create scheduled task for responder

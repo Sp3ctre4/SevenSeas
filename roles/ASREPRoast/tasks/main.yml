@@ -1,3 +1,3 @@
 - name: Disable Kerberos-PreAuthentication for Amelia
   ansible.windows.win_powershell:
-    script: scripts/asrep.ps1
+    script: asrep.ps1

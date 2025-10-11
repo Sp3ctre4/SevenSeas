@@ -1,4 +1,4 @@
-- name: Docking Interceptor at PortRoyal... (Domain Joining)
+- name: Docking "{{ hostname }}" at PortRoyal... (Domain Joining)
   microsoft.ad.membership:
       dns_domain_name: "{{ FQDN }}"
       hostname: "{{ hostname }}"

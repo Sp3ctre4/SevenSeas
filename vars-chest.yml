@@ -75,10 +75,11 @@ ad_users:
     password: royalnavy123
     group: Lieutenants
     description: ""
-  - first_name: "NavySVC"
+  - first_name: NavySVC
     last_name: ""
     username: navysvc
     password: cannonball
+    group: Navy IT
     description: "Service account for Port Royal"
   - first_name: Murtogg
     last_name: Smith

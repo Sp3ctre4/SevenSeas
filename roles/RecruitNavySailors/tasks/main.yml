@@ -1,8 +1,8 @@
 - name: Create Active Directory users
   microsoft.ad.user:
+    identity: "{{ item.username }}"
     firstname: "{{ item.first_name }}" 
     surname: "{{ item.last_name }}"
-    sam_account_name: "{{ item.username }}"
     password: "{{ item.password }}"
     password_never_expires: true
     path: "{{ navy_ou }}"

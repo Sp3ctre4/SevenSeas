@@ -22,7 +22,7 @@
   ansible.windows.win_user_right:
     name: SeRemoteInteractiveLogonRight
     users:
-      - Navy_IT
+      - Navy IT
     action: add
     
 - name: Add Navy IT to Remote Desktop Users group

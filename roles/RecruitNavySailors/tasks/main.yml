@@ -1,0 +1,22 @@
+- name: Create Active Directory users
+  microsoft.ad.user:
+    firstname: "{{ item.first_name }}" 
+    surname: "{{ item.last_name }}"
+    identity: "{{ item.username }}"
+    password: "{{ item.password }}"
+    password_never_expires: true
+    path: "{{ navy_ou }}"
+    groups:
+      - "{{ item.group }}"
+      - Domain Users
+    description: "{{ item.description }}"
+    state: present
+  loop: "{{ ad_users }}"
+
+- name: Admiralize James Norrington
+  microsoft.ad.group:
+    name: Domain Admins
+    scope: global
+    members:
+      add:
+        - Admirals

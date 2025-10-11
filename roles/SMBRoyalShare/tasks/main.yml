@@ -1,0 +1,180 @@
+- name: Create Share Directory
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}"
+    state: directory
+
+- name: Create SMB share with guest access
+  ansible.windows.win_share:
+    name: "{{ share_name }}"
+    path: "C:\\{{ share_name }}"
+    description: "His Majesty's Royal Documents!"
+    full: Domain Users, Guest
+    state: present
+
+# Now that the Royal Share is created, populate it with a crazy ridiculous teir structure for no reason at all!
+
+# Naval Operations Tier
+- name: Create Naval Operations
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Naval Operations"
+    state: directory
+- name: Create Naval Operations > Admirality
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Naval Operations\\Admirality"
+    state: directory
+- name: Create Naval Operations > Fleet
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Naval Operations\\Fleet"
+    state: directory
+- name: Create Naval Operations > Navy Personnel
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Naval Operations\\Navy Personnel"
+    state: directory
+
+# Merchant Shipping Services Tier
+- name: Create Merchant Shipping Services
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Merchant Shipping Services"
+    state: directory
+- name: Create MSS > British Merchant Ships
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Merchant Shipping Services\\British Merchant Ships"
+    state: directory
+- name: Create MSS > Cargo
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Merchant Shipping Services\\Cargo"
+    state: directory
+- name: Create MSS > Merchant Personnel
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Merchant Shipping Services\\Merchant Personnel"
+    state: directory
+
+# Port Royal City Affairs Tier
+- name: Create Port Royal City Affairs
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Port Royal City Affairs"
+    state: directory
+- name: Create PRCA > Government and Officials
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Port Royal City Affairs\\Government and Officials"
+    state: directory
+- name: Create PRCA > Port Security
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Port Royal City Affairs\\Port Security"
+    state: directory
+- name: Create PRCA > Infrastructure
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Port Royal City Affairs\\Infrastructure"
+    state: directory
+
+# Pirates and Smuggling Activities Tier
+- name: Create Pirates and Smuggling Activities 
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Pirates and Smuggling Activities"
+    state: directory
+- name: Create P&SA > Pirate Activities
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Pirates and Smuggling Activities\\Pirate Activities"
+    state: directory
+- name: Create P&SA > Smuggling Operations
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Pirates and Smuggling Activities\\Smuggling Operations"
+    state: directory
+
+# Historical and Legal Documents Tier
+- name: Create Historical and Legal Documents
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Historical and Legal Documents"
+    state: directory
+- name: Create HALD > Royal Decrees
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Historical and Legal Documents\\Royal Decrees"
+    state: directory
+- name: Create HALD > Naval Treaties
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Historical and Legal Documents\\Naval Treaties"
+    state: directory
+- name: Create HALD > Correspondence with the Crown
+  ansible.windows.win_file:
+    path: "C:\\{{ share_name }}\\Historical and Legal Documents\\Correspondence with the Crown"
+    state: directory
+
+# Now copy all the files into their respective places
+
+# into Naval Operations
+- name: Copy correspondence letter
+  ansible.windows.win_copy:
+    src: "files/Correspondence Letter.txt"
+    dest: "C:\\{{share_name}}\\Naval Operations\\Admirality\\"
+- name: Copy orders and decrees
+  ansible.windows.win_copy:
+    src: "files/Orders&Decrees.txt"
+    dest: "C:\\{{share_name}}\\Naval Operations\\Admirality\\"
+- name: Copy operations report
+  ansible.windows.win_copy:
+    src: "files/Operations Report.txt"
+    dest: "C:\\{{share_name}}\\Naval Operations\\Admirality\\"
+- name: Copy navy log
+  ansible.windows.win_copy:
+    src: "files/Navy Log.txt"
+    dest: "C:\\{{share_name}}\\Naval Operations\\Fleet\\"
+- name: Copy training materials
+  ansible.windows.win_copy:
+    src: "files/Training Materials.txt"
+    dest: "C:\\{{share_name}}\\\\Naval Operations\\Navy Personnel\\"
+
+# into Merchant Shipping Services
+- name: Copy cargo shipments
+  ansible.windows.win_copy:
+    src: "files/Cargo Shipments.txt"
+    dest: "C:\\{{share_name}}\\Merchant Shipping Services\\British Merchant Ships\\"
+- name: Copy crew manifesto
+  ansible.windows.win_copy:
+    src: "files/Crew Manifesto.txt"
+    dest: "C:\\{{share_name}}\\Merchant Shipping Services\\British Merchant Ships\\"
+- name: Copy spice manifest
+  ansible.windows.win_copy:
+    src: "files/Spice Manifest.xlsx"
+    dest: "C:\\{{share_name}}\\Merchant Shipping Services\\Cargo\\"
+- name: Copy merchant captains
+  ansible.windows.win_copy:
+    src: "files/Merchant Captains.txt"
+    dest: "C:\\{{share_name}}\\Merchant Shipping Services\\Merchant Personnel\\"
+
+# into Port Royal City Affairs
+- name: Copy taxes and tariffs
+  ansible.windows.win_copy:
+    src: "files/Taxes&Tariffs.txt"
+    dest: "C:\\{{share_name}}\\Port Royal City Affairs\\Government and Officials\\"
+- name: Copy incident logs
+  ansible.windows.win_copy:
+    src: "files/Incident Logs.txt"
+    dest: "C:\\{{share_name}}\\Port Royal City Affairs\\Port Security\\"
+- name: Copy  ships logs
+  ansible.windows.win_copy:
+    src: "files/User Account Instructions.txt"
+    dest: "C:\\{{share_name}}\\Port Royal City Affairs\\Infrastructure\\"
+
+# into Pirates and Smuggling Activities
+- name: Copy pirate raids
+  ansible.windows.win_copy:
+    src: "files/Pirate Raids.txt"
+    dest: "C:\\{{share_name}}\\Pirates and Smuggling Activities\\Pirate Activities\\"
+- name: Copy **bribery report**
+  ansible.windows.win_copy:
+    src: "files/Bribery Report.txt"
+    dest: "C:\\{{share_name}}\\Pirates and Smuggling Activities\\Smuggling Operations\\"
+
+# into Historical and Legal Documents
+- name: Copy royal decrees
+  ansible.windows.win_copy:
+    src: "files/Royal Decrees.txt"
+    dest: "C:\\{{share_name}}\\Historical and Legal Documents\\Royal Decrees\\"
+- name: Copy trade agreements
+  ansible.windows.win_copy:
+    src: "files/Trade Agreements.txt"
+    dest: "C:\\{{share_name}}\\Historical and Legal Documents\\Naval Treaties\\"
+- name: Copy letter to the crown
+  ansible.windows.win_copy:
+    src: "files/Letter to the Crown.txt"
+    dest: "C:\\{{share_name}}\\Historical and Legal Documents\\Correspondence with the Crown\\"

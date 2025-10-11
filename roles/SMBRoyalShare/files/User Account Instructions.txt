@@ -1,0 +1,26 @@
+User Account Installation Instructions 
+Date: 26th of February, 1725
+
+All Captains,
+
+You will find below the necessary details with which to create new accounts in the domain.
+
+1. Log into the domain controller
+
+2. Open the users manager windows
+
+3. Right-click and select "New User"
+
+4. Ensure you write down their name properly
+
+5. Set their default password to "royalnavy123"
+
+6. Log out of the domain controller.
+
+7. Make sure to tell that user to change their password once they log in.
+
+These instructions should be clear.
+    you knuckleheads better follow them straight, I don't want to see anymore
+    default passwords in use because you are too lazy! 
+
+End Instructions

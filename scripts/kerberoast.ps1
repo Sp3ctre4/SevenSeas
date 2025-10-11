@@ -1,0 +1,1 @@
+Set-ADUser -Identity "navysvc" -ServicePrincipalNames @{Add="HTTP\PORTROYAL-DC.SEVENKINGDOMS.LOCAL"}

@@ -1,0 +1,13 @@
+- name: Adding HisRoyalNavy Organizational Unit
+  microsoft.ad.ou:
+    name: HisRoyalNavy
+    path: "{{ default_ou }}"
+    state: present
+
+- name: Adding Navy Ranks
+  microsoft.ad.group:
+    name: "{{ item.rank_name }}"
+    scope: global
+    path: "{{ navy_ou }}"
+    state: present
+  loop: "{{ navy_ranks }}"

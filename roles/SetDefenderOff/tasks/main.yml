@@ -1,0 +1,9 @@
+- name: Remove Windows Defender
+  ansible.windows.win_feature:
+    name: Windows-Defender
+    state: absent
+  register: win_defend_remove
+
+- name: Reboot after removing defender
+  ansible.windows.win_reboot:
+  when: win_defend_remove.reboot_required

@@ -1,0 +1,6 @@
+- name: Promote SVC to Workstation local admin
+  ansible.windows.win_group_membership:
+    name: Administrators
+    members:
+      - SEVENSEAS\navysvc
+    state: present

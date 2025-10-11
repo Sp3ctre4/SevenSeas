@@ -1,0 +1,7 @@
+- name: Set Firewalls to "{{ firewall_state }}"
+  ansible.windows.win_firewall:
+    state: "{{ firewall_state }}"
+    profiles:
+      - Domain
+      - Public
+      - Private

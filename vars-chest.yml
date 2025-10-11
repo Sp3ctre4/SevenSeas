@@ -1,0 +1,178 @@
+dc_hostname: PORTROYAL-DC
+wk1_hostname: DAUNTLESS
+wk2_hostname: INTERCEPTOR
+FQDN: SEVENSEAS.LOCAL
+domain: SEVENSEAS
+domain_admin: "Administrator@SEVENSEAS.LOCAL"
+pass_pol:
+  lockout_threshold: 99
+  pass_length: 5
+  lockout_duration: "00.00:05:00.00"
+  complexity: "false"
+firewall_state: disabled
+share_name: RoyalShare
+default_ou: "DC=sevenseas,DC=local"
+navy_ou: "OU=HisRoyalNavy,DC=sevenseas,DC=local"
+navy_ranks:
+  - rank_name: Admirals
+  - rank_name: Captains
+  - rank_name: Navy IT
+  - rank_name: Lieutenants
+  - rank_name: Officers
+  - rank_name: Deckhands
+ad_users:
+  - first_name: James
+    last_name: Norrington
+    username: james.norrington
+    password: elizabeth
+    group: Admirals
+    description: ""
+  - first_name: Edward
+    last_name: Cross
+    username: edward.cross
+    password: SeaDog#Captain@42
+    group: Captains
+    description: ""
+  - first_name: Elias
+    last_name: Thorne
+    username: elias.thorne
+    password: IReallyDontLikePirates!
+    group: Captains
+    description: For The King!
+  - first_name: Amelia
+    last_name: Doppler
+    username: amelia.doppler
+    password: swordfish!
+    group: Navy IT
+    description: ""
+  - first_name: Archer
+    last_name: Brown
+    username: archer.brown
+    password: captainhook
+    group: Captains
+    description: ""
+  - first_name: Samuel
+    last_name: Blackwood
+    username: samuel.blackwood
+    password: kiwitheparrot
+    group: Lieutenants
+    description: ""
+  - first_name: Jonathon
+    last_name: Lockheart
+    username: jonathon.lockheart
+    password: Cutlass$andGold!42
+    group: Lieutenants
+    description: ""
+  - first_name: Daniel
+    last_name: Hargrave
+    username: daniel.hargrave
+    password: Marooned!OnIsland#23
+    group: Lieutenants
+    description: ""
+  - first_name: William
+    last_name: Marlowe
+    username: william.marlowe
+    password: royalnavy123
+    group: Lieutenants
+    description: ""
+  - first_name: "NavySVC"
+    last_name: ""
+    username: navysvc
+    password: cannonball
+    description: "Service account for Port Royal"
+  - first_name: Murtogg
+    last_name: Smith
+    username: murtogg.smith
+    password: blackpearlfanboyclub
+    group: Officers
+    description: ""
+  - first_name: Mullroy
+    last_name: Smith
+    username: mullroy.smith
+    password: blackpearlfanboyclub
+    group: Officers
+    description: ""
+  - first_name: Oliver
+    last_name: Hampton
+    username: oliver.hampton
+    password: NavalBattle!B4#TheCrown
+    group: Deckhands
+    description: ""
+  - first_name: Geoffrey
+    last_name: Reed
+    username: geoffrey.reed
+    password: Grog4TheCrew#123
+    group: Deckhands
+    description: ""
+  - first_name: Francis
+    last_name: Harland
+    username: francis.harland
+    password: francis123
+    group: Deckhands
+    description: ""
+  - first_name: Edmund
+    last_name: Radcliffe
+    username: edmund.radcliffe
+    password: Swashbuckl3r!X!
+    group: Deckhands
+    description: ""
+  - first_name: Richard
+    last_name: Graves
+    username: richard.graves
+    password: Sailing@PortRoyal1812
+    group: Deckhands
+    description: ""
+  - first_name: Rupert
+    last_name: Ashford
+    username: rupert.ashford
+    password: TheWind@InMySails1782
+    group: Deckhands
+    description: Nobody will think to look for my password in here! TheWind@InMySails1782
+  - first_name: Frederick
+    last_name: Shelton
+    username: frederick.shelton
+    password: DavyJones!Locker@1779
+    group: Deckhands
+    description: ""
+  - first_name: Nathaniel
+    last_name: Crow
+    username: nathaniel.crow
+    password: adventurer
+    group: Deckhands
+    description: ""
+  - first_name: Horatio
+    last_name: Fitzgerald
+    username: horatio.fitzgerald
+    password: ilovebooks
+    group: Deckhands
+    description: Ive always dreamed of writing a book one day.
+  - first_name: Henry
+    last_name: Pritchard
+    username: henry.pritchard
+    password: FlagShip!RoyalNavy$#1795
+    group: Deckhands
+    description: ""
+  - first_name: Arthur
+    last_name: Forsythe
+    username: arthur.forsythe
+    password: CannonFire@HighSeas!
+    group: Deckhands
+    description: ""
+  - first_name: Quentin
+    last_name: Hayes
+    username: quentin.hayes
+    password: orchestra
+    group: Deckhands
+    description:
+  - first_name: Andrew
+    last_name: Calloway
+    username: andrew.calloway
+    password: portside1
+    group: Deckhands
+    description: ""
+  - first_name: Thomas
+    last_name: Wentworth
+    username: thomas.wentworth
+    password: starboard1
+    group: Deckhands
+    description: ""

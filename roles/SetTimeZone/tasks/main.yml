@@ -1,0 +1,3 @@
+- name: Set Timezone to EST
+  ansible.windows.win_timezone:
+    timezone: "Eastern Standard Time"

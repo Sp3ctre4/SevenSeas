@@ -1,0 +1,1 @@
+Set-ADAccountControl -Identity amelia.doppler -DoesNotRequirePreAuth $true

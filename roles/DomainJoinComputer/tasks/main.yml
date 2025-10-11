@@ -1,0 +1,8 @@
+- name: Docking Interceptor at PortRoyal... (Domain Joining)
+  microsoft.ad.membership:
+      dns_domain_name: "{{ FQDN }}"
+      hostname: "{{ hostname }}"
+      domain_admin_user: "{{ domain_admin }}"
+      domain_admin_password: "{{ ansible_password }}"
+      state: domain
+      reboot: true

@@ -1,0 +1,4 @@
+- name: Enable Domain Guest
+  microsoft.ad.user:
+    identity: Guest
+    enabled: true

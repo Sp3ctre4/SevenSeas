@@ -1,0 +1,44 @@
+domain_controllers:
+  hosts:
+    portroyal:
+      hostname: "PORTROYAL-DC"
+      ansible_host: 192.168.0.x # Domain Controller IP
+      ansible_user: Administrator 
+      ansible_password: NoPiratesAllowed!
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5985
+workstations:
+  hosts:
+    dauntless:
+      hostname: "DAUNTLESS"
+      ansible_host: 192.168.0.x # Workstation 1 IP
+      ansible_user: murtogg
+      ansible_password: blackpearlfanboyclub
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5985
+    interceptor:
+      hostname: "INTERCEPTOR"
+      ansible_host: 192.168.0.x # Workstation 2 IP
+      ansible_user: mullroy
+      ansible_password: blackpearlfanboyclub
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5985
+domain_workstations:
+  hosts:
+    admin-dauntless:
+      ansible_host: 192.168.0.x # Workstation 1 IP
+      ansible_user: Administrator 
+      ansible_password: NoPiratesAllowed!
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5985
+    admin-interceptor:
+      ansible_host: 192.168.0.x # Workstation 2 IP
+      ansible_user: Administrator 
+      ansible_password: NoPiratesAllowed!
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5985

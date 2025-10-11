@@ -4,6 +4,7 @@ wk2_hostname: INTERCEPTOR
 FQDN: SEVENSEAS.LOCAL
 domain: SEVENSEAS
 domain_admin: "Administrator@SEVENSEAS.LOCAL"
+domain_password: "NoPiratesAllowed!"
 pass_pol:
   lockout_threshold: 99
   pass_length: 5

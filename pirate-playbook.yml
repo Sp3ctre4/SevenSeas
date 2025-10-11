@@ -21,16 +21,31 @@
   - role: SMBRoyalShare
   - role: EnableRDP
 
-- name: Launching workstations
+- name: Launching Dauntless
   hosts: workstations
   gather_facts: true
+  tags: workstations
   vars_files:
     - vars-chest.yml
+  vars:
+    hostname: "DAUNTLESS"
+  roles:
+  - role: DomainJoinComputer
+
+- name: Launching Interceptor
+  hosts: workstations
+  gather_facts: true
+  tags: workstations
+  vars_files:
+    - vars-chest.yml
+  vars:
+    hostname: "INTERCEPTOR"
   roles:
   - role: DomainJoinComputer
 
 - name: Admin tasks on DAUNTLESS & INTERCEPTOR
   hosts: domain_workstations
+  tags: workstations
   roles:
   - role: SetFirewallState
   - role: SetDefenderOff
@@ -38,10 +53,12 @@
 
 - name: Admin tasks on DAUNTLESS
   hosts: admin-dauntless
+  tags: workstations
   roles:
   - role: SetLocalAdmin
 
 - name: Admin tasks on INTERCEPTOR
   hosts: admin-interceptor
+  tags: workstations
   roles:
   - role: SetLocalAdmin

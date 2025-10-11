@@ -1,7 +1,24 @@
 # https://learn.microsoft.com/en-us/powershell/module/activedirectory/set-addefaultdomainpasswordpolicy?view=windowsserver2025-ps
-- name: set password policy
+- name: Set Pass Pol for "{{ FQDN }}"
   ansible.windows.win_powershell:
     script: |
+      [CmdletBinding()]
+      param (
+          [String]
+          $LockoutThreshold,
+
+          [String]
+          $MinPasswordLength,
+
+          [String]
+          $LockoutDuration,
+
+          [String]
+          $LockoutObservationWindow,
+
+          [Boolean]
+          $ComplexityEnabled
+      )
       Set-ADDefaultDomainPasswordPolicy -Identity $Domain -LockoutDuration $LockoutDuration -LockoutThreshold $LockoutThreshold -ComplexityEnabled $ComplexityEnabled -ReversibleEncryptionEnabled $False -MinPasswordLength $MinPasswordLength -MaxPasswordAge "10675199.00:00:00"
     error_action: stop
     parameters:

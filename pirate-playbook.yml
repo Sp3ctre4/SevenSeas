@@ -3,7 +3,7 @@
   gather_facts: true
   tags: light
   vars_files:
-    - ./vars-chest.yml
+    - vars-chest.yml
   roles:
   - role: SetHostname
   - role: DeployAD
@@ -24,7 +24,7 @@
   hosts: workstations
   gather_facts: true
   vars_files:
-    - ./vars-chest.yml
+    - vars-chest.yml
   roles:
   - role: DomainJoinComputer
 

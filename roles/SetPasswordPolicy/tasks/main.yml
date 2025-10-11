@@ -1,29 +1,39 @@
-# https://learn.microsoft.com/en-us/powershell/module/activedirectory/set-addefaultdomainpasswordpolicy?view=windowsserver2025-ps
-- name: Set Pass Pol for "{{ FQDN }}"
-  ansible.windows.win_powershell:
-    script: |
-      [CmdletBinding()]
-      param (
-          [String]
-          $LockoutThreshold,
+- name: Set Minimum Password Length
+  win_security_policy:
+    section: System Access
+    key: MinimumPasswordLength
+    value: "{{ pass_pol.pass_length }}"
 
-          [String]
-          $MinPasswordLength,
+- name: Set Minimum Password Age
+  win_security_policy:
+    section: System Access
+    key: MinimumPasswordAge
+    value: 0
 
-          [String]
-          $LockoutDuration,
+- name: Set Maximum Password Age
+  win_security_policy:
+    section: System Access
+    key: MaximumPasswordAge
+    value: 99
 
-          [String]
-          $LockoutObservationWindow,
+- name: Set Enforce Password History
+  win_security_policy:
+    section: System Access
+    key: PasswordHistorySize
+    value: 0
 
-          [Boolean]
-          $ComplexityEnabled
-      )
-      Set-ADDefaultDomainPasswordPolicy -Identity $Domain -LockoutDuration $LockoutDuration -LockoutThreshold $LockoutThreshold -ComplexityEnabled $ComplexityEnabled -ReversibleEncryptionEnabled $False -MinPasswordLength $MinPasswordLength -MaxPasswordAge "10675199.00:00:00"
-    error_action: stop
-    parameters:
-      Domain: "{{ FQDN }}"
-      LockoutThreshold: "{{ pass_pol.lockout_threshold }}"
-      MinPasswordLength: "{{ pass_pol.pass_length }}"
-      LockoutDuration: "{{ pass_pol.lockout_duration }}"
-      ComplexityEnabled: "{{ pass_pol.complexity }}"
+- name: Set Password Complexity Requirements
+  win_security_policy:
+    section: System Access
+    key: PasswordComplexity
+    value: "{{ pass_pol.complexity }}"
+
+- name: Set Local Lockout Threshold
+  win_shell: "net accounts /lockoutthreshold:{{ pass_pol.lockout_threshold }}"
+  args:
+    executable: powershell
+
+- name: Set Domain Lockout Threshold
+  win_shell: "net accounts /lockoutthreshold:{{ pass_pol.lockout_threshold }} /domain"
+  args:
+    executable: powershell

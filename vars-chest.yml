@@ -8,7 +8,7 @@ pass_pol:
   lockout_threshold: 99
   pass_length: 5
   lockout_duration: "00.00:05:00.00"
-  complexity: "false"
+  complexity: false
 firewall_state: disabled
 share_name: RoyalShare
 default_ou: "DC=sevenseas,DC=local"

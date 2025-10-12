@@ -22,18 +22,18 @@
   - role: EnableRDP
 
 - name: Launching Dauntless
-  hosts: workstations
+  hosts: dauntless
   gather_facts: true
   tags: workstations
   vars_files:
     - vars-chest.yml
-  vars:
+  vars:    
     hostname: "DAUNTLESS"
   roles:
   - role: DomainJoinComputer
 
 - name: Launching Interceptor
-  hosts: workstations
+  hosts: interceptor
   gather_facts: true
   tags: workstations
   vars_files:
@@ -57,8 +57,9 @@
   roles:
   - role: SetLocalAdmin
 
-- name: Admin tasks on INTERCEPTOR
-  hosts: admin-interceptor
-  tags: workstations
-  roles:
-  - role: SetLocalAdmin
+#- name: Admin tasks on INTERCEPTOR
+#  hosts: admin-interceptor
+#  tags: workstations
+#  roles:
+#  - role: InstallFirefox
+#  - role: UploadFirefoxProfile

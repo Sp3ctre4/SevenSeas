@@ -19,7 +19,7 @@
   - role: SetExtendedACL
   - role: EnableDomainGuest
   - role: SMBRoyalShare
-  - role: EnableRDP
+  - role: EnableRemoting
 
 - name: Launching Dauntless
   hosts: dauntless
@@ -43,23 +43,21 @@
   roles:
   - role: DomainJoinComputer
 
-- name: Admin tasks on DAUNTLESS & INTERCEPTOR
-  hosts: domain_workstations
-  tags: workstations
-  roles:
-  - role: SetFirewallState
-  - role: SetDefenderOff
-  - role: EnableRDP
-
 - name: Admin tasks on DAUNTLESS
   hosts: admin-dauntless
   tags: workstations
   roles:
+  - role: SetFirewallState
+  - role: SetDefenderOff
+  - role: EnableRemoting
   - role: SetLocalAdmin
 
-#- name: Admin tasks on INTERCEPTOR
-#  hosts: admin-interceptor
-#  tags: workstations
-#  roles:
+- name: Admin tasks on INTERCEPTOR
+  hosts: admin-interceptor
+  tags: workstations
+  roles:
+  - role: SetFirewallState
+  - role: SetDefenderOff
+  - role: EnableRemoting
 #  - role: InstallFirefox
 #  - role: UploadFirefoxProfile

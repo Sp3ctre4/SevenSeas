@@ -1,4 +1,0 @@
-{
-    "ansible.validation.enabled": false,
-    "ansible.validation.lint.enabled": false
-}

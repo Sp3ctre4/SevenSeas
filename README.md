@@ -29,10 +29,16 @@ vars-chest.yml - variable file which contains data for the network.
 
 **Configuration**
 
+Full Install
 1. Install the Windows Server that will become the domain controller using the PortRoyal password found in ship-manifest.yml
 2. Install the Windows workstations using the corresponding admin username and password found in ship-manifest.yml
 3. Ensure that all machines point to the Windows Server IP as a DNS server. This can be done statically or through DHCP.
 4. Once installed (default is fine), open an administrator powershell session on all systems and run `winrm quickconfig`, say "Yes" to all.
+
+Light Instance
+- Follow the above instructions but only for the domain controller
+- When running the ansible playbook, add the line `--tags light` to the ansible-playbook command.
+- This will configure just the DC, if you need a smaller resource footprint.
 
 **Provisioning (the ansible)**
 
@@ -45,16 +51,16 @@ Verify connection:
 Run the playbook:
 `ansible-playbook pirate-playbook.yml -i ship-manifest.yml`
 
+Go bake some cookies! (this will take a while). If any errors happen, just try re-running the playbook command again, ansible is funny like that.
+
 ## ToDo
 Add the following vulns/attacks:
 - Firefox Creds
 
 Ansible
 - consider using become to handle workstation admin tasks?
-- tag the DC play as "light" for a miniature version
 
 Install
-- Add python virtual environment to instructions
 - Deal with cryptography depreciation warnings
 
 ## Credits

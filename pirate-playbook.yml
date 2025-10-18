@@ -46,18 +46,20 @@
 - name: Admin tasks on DAUNTLESS
   hosts: admin-dauntless
   tags: workstations
+  vars_files:
+    - vars-chest.yml
   roles:
   - role: SetFirewallState
-  - role: SetDefenderOff
   - role: EnableRemoting
   - role: SetLocalAdmin
 
 - name: Admin tasks on INTERCEPTOR
   hosts: admin-interceptor
   tags: workstations
+  vars_files:
+    - vars-chest.yml
   roles:
   - role: SetFirewallState
-  - role: SetDefenderOff
   - role: EnableRemoting
 #  - role: InstallFirefox
 #  - role: UploadFirefoxProfile

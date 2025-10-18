@@ -1,6 +1,6 @@
 # SevenSeas 
 > Version: Coconut-Princess
-Ansible based deployment for a simple Active Directory setup designed for ethical hacking training. DO NOT USE IN PRODUCTION.
+> Ansible based deployment for a simple Active Directory setup designed for ethical hacking training. DO NOT USE IN PRODUCTION.
 
 ## Vulnerbility List
 Below is a list of vulnerabilities/attacks included in this project thus far:

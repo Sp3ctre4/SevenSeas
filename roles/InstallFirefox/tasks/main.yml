@@ -1,0 +1,11 @@
+- name: Download Firefox to a temporary directory
+  win_get_url:
+    url: 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US'
+    dest: '{{ ansible_env.TMP }}\firefox_installer.exe'
+
+- name: Run the Firefox installer
+  win_package:
+    path: '{{ ansible_env.TMP }}\firefox_installer.exe'
+    creates_path: 'C:\Program Files\Mozilla Firefox\firefox.exe'
+    arguments:
+      - -ms

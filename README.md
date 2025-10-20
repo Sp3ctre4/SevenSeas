@@ -18,9 +18,9 @@ Below is a list of vulnerabilities/attacks included in this project thus far:
 
 ## Files Included
 
-pirate-playbook.yml - the main yaml ansible playbook.
-ship-manifest.yml - the inventory file which stores the connection information for all the machines.
-vars-chest.yml - variable file which contains data for the network.
+- pirate-playbook.yml - the main yaml ansible playbook.
+- ship-manifest.yml - the inventory file which stores the connection information for all the machines.
+- vars-chest.yml - variable file which contains data for the network.
 
 ## Installation
 > Instructions on how to confnigure and run this playbook to set up a local SevenSeas environment.

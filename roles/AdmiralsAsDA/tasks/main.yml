@@ -1,0 +1,12 @@
+# Give every privilege DAs have to Admirals
+- name: Giving OP Privs to Admirals!
+  ansible.windows.win_user_right:
+    name: "{{ item.priv }}"
+    users: 'SEVENSEAS\Admirals'
+    action: add
+  loop: "{{ priv_list }}"
+
+# run powershell script to give Admirals FullControl over the domain object
+- name: Run domainfullcontrol script
+  ansible.windows.win_powershell:
+    script: domainfullcontrol.ps1

@@ -1,3 +1,4 @@
+# Create a scheduled LLMNR Broadcast with a compromisable user account
 - name: Copy LLMNR Script to DC
   ansible.windows.win_copy:
     src: llmnr.ps1

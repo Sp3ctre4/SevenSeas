@@ -1,3 +1,4 @@
+# Domain Join a workstation
 - name: Docking "{{ hostname }}" at PortRoyal... (Domain Joining)
   microsoft.ad.membership:
       dns_domain_name: "{{ FQDN }}"

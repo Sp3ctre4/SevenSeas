@@ -1,3 +1,4 @@
+# Run the extended ACL script (for amelia)
 - name: Set Extended ACL
   ansible.windows.win_powershell:
     script: set_extended_acl.ps1

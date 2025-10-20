@@ -55,13 +55,14 @@ Go bake some cookies! (this will take a while). If any errors happen, just try r
 
 ## ToDo
 Add the following vulns/attacks:
-- Firefox Creds
+- firefox Creds
 
 Ansible
 - consider using become to handle workstation admin tasks?
+- fix workstation catastrophe
 
 Install
-- Deal with cryptography depreciation warnings
+- deal with cryptography depreciation warnings
 
 ## Credits
 To OrangeCyberdefense's GOAD Project (for some ansible *inspiration*)

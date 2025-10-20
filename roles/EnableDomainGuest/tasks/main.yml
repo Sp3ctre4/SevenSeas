@@ -1,3 +1,4 @@
+# Enable the Domain Guest Account
 - name: Enable Domain Guest
   microsoft.ad.user:
     identity: Guest

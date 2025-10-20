@@ -1,3 +1,4 @@
+# loop and create all active directory users
 - name: Create Active Directory users
   microsoft.ad.user:
     identity: "{{ item.username }}"
@@ -13,10 +14,10 @@
     state: present
   loop: "{{ ad_users }}"
 
-- name: Admiralize James Norrington
-  microsoft.ad.group:
-    name: Domain Admins
-    scope: global
-    members:
-      add:
-        - Admirals
+#- name: Admiralize James Norrington
+#  microsoft.ad.group:
+#    name: Domain Admins
+#    scope: global
+#    members:
+#      add:
+#        - Admirals

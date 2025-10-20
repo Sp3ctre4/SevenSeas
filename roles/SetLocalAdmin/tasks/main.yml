@@ -1,6 +1,7 @@
-- name: Promote SVC to Workstation local admin
+# promote a domain user to local administrator
+- name: Promote "{{ localadmin }}" to Workstation local admin
   ansible.windows.win_group_membership:
     name: Administrators
     members:
-      - SEVENSEAS\navysvc
+      - "{{ localadmin }}"
     state: present

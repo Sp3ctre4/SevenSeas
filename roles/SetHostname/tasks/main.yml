@@ -1,3 +1,4 @@
+# Set machine hostname and reboot
 - name: Set hostname to "{{ hostname }}"
   ansible.windows.win_hostname:
     name: "{{ hostname }}"

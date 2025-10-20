@@ -178,3 +178,30 @@ ad_users:
     password: starboard1
     group: Deckhands
     description: ""
+priv_list:
+  - priv: SeIncreaseQuotaPrivilege
+  - priv: SeMachineAccountPrivilege
+  - priv: SeSecurityPrivilege
+  - priv: SeTakeOwnershipPrivilege
+  - priv: SeLoadDriverPrivilege
+  - priv: SeSystemProfilePrivilege
+  - priv: SeSystemtimePrivilege
+  - priv: SeProfileSingleProcessPrivilege
+  - priv: SeIncreaseBasePriorityPrivilege
+  - priv: SeCreatePagefilePrivilege
+  - priv: SeBackupPrivilege
+  - priv: SeRestorePrivilege
+  - priv: SeShutdownPrivilege
+  - priv: SeDebugPrivilege
+  - priv: SeSystemEnvironmentPrivilege
+  - priv: SeChangeNotifyPrivilege
+  - priv: SeRemoteShutdownPrivilege
+  - priv: SeUndockPrivilege
+  - priv: SeEnableDelegationPrivilege
+  - priv: SeManageVolumePrivilege
+  - priv: SeImpersonatePrivilege
+  - priv: SeCreateGlobalPrivilege
+  - priv: SeIncreaseWorkingSetPrivilege
+  - priv: SeTimeZonePrivilege
+  - priv: SeCreateSymbolicLinkPrivilege
+  - priv: SeDelegateSessionUserImpersonatePrivilege

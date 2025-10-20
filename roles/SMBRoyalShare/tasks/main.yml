@@ -1,3 +1,4 @@
+# Create the SMB share (with secrets!)
 - name: Create Share Directory
   ansible.windows.win_file:
     path: "C:\\{{ share_name }}"

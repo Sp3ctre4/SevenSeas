@@ -1,3 +1,4 @@
+# Allow RDP and WinRM to the machine (for Navy IT)
 - name: Enable RDP
   ansible.windows.win_regedit:
     key: HKLM:\System\CurrentControlSet\Control\Terminal Server

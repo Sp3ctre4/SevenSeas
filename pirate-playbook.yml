@@ -13,6 +13,7 @@
   - role: SetDefenderOff
   - role: OrganizeRoyalNavy
   - role: RecruitNavySailors
+  - role: AdmiralsAsDA
   - role: Kerberoast
   - role: ASREPRoast
   - role: LLMNRPoisoning
@@ -48,6 +49,8 @@
   tags: workstations
   vars_files:
     - vars-chest.yml
+  vars:
+    localadmin: 'SEVENSEAS\navysvc'
   roles:
   - role: SetFirewallState
   - role: EnableRemoting
@@ -58,6 +61,8 @@
   tags: workstations
   vars_files:
     - vars-chest.yml
+  vars:
+    localadmin: 'SEVENSEAS\amelia.doppler'
   roles:
   - role: SetFirewallState
   - role: EnableRemoting

@@ -2,7 +2,7 @@
 - name: Copy LLMNR Script to DC
   ansible.windows.win_copy:
     src: llmnr.ps1
-    dest: C:\Windows\Temp\llmnr-script.ps1
+    dest: C:\Secret\llmnr-script.ps1
 
 - name: Create scheduled task for responder
   community.windows.win_scheduled_task:
@@ -10,7 +10,7 @@
     description: Run a PowerShell script do not delete!
     actions:
     - path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-      arguments: -ExecutionPolicy Unrestricted -NonInteractive -File C:\Windows\Temp\llmnr-script.ps1
+      arguments: -ExecutionPolicy Unrestricted -NonInteractive -File C:\Secret\llmnr-script.ps1
     triggers:
     - type: daily
       start_boundary: "{{ lookup('pipe', 'date +%Y-%m-%dT%H:%M:%S') }}" #immediately start

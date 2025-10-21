@@ -11,6 +11,7 @@
   - role: SetTimeZone
   - role: SetFirewallState
   - role: SetDefenderOff
+  - role: CreateSecretFolder
   - role: OrganizeRoyalNavy
   - role: RecruitNavySailors
   - role: AdmiralsAsDA

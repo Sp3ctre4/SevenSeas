@@ -1,4 +1,5 @@
 # Set Service Principal Name for NavySVC
 - name: Set SPN for NavySVC
   ansible.windows.win_powershell:
-    script: kerberoast.ps1
+    script: |
+      Set-ADUser -Identity "navysvc" -Add @{ServicePrincipalNames="HTTP\PORTROYAL-DC.SEVENSEAS.LOCAL"}

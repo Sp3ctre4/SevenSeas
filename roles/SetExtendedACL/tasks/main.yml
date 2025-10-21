@@ -1,4 +1,16 @@
 # Run the extended ACL script (for amelia)
-- name: Set Extended ACL
+- name: Grant amelia force password over james
   ansible.windows.win_powershell:
-    script: set_extended_acl.ps1
+    script: |
+      $srcobj = (Get-ADGroup -Identity "Navy IT").sid
+      $dstobj = (Get-ADGroup -Identity "Admirals").DistinguishedName
+      $extended_right_guid = "00299570-246d-11d0-a768-00aa006e0529"
+      # Initialize Class Objects
+      $dstacl = [ADSI]("LDAP://" + $dstobj)
+      $adRights = [System.DirectoryServices.ActiveDirectoryRights] "ExtendedRight"
+      $type = [System.Security.AccessControl.AccessControlType] "Allow"
+      $inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance] "All"
+      # Add Entry to Destination Object
+      $ace = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $srcobj,$adRights,$type,$extended_right_guid,$inheritanceType
+      $dstacl.AddAccessRule($ace)
+      Set-Acl -Acl Object $dstacl -path $dstobj

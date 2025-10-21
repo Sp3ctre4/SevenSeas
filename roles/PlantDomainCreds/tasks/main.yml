@@ -1,0 +1,5 @@
+# https://www.ired.team/offensive-security/credential-access-and-credential-dumping/network-vs-interactive-logons
+# using runas to simulate an interactive logon
+- name: Cache domain user credentials via runas
+  ansible.windows.win_command:
+    cmd: runas /user:amelia.doppler@SEVENSEAS.LOCAL cmd.exe

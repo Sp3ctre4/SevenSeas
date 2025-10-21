@@ -1,0 +1,25 @@
+# Create a Secret folder on the DC to store powershell scripts for vulnerabilities
+
+# Create the folder
+- name: Creating the Secret folder...
+  ansible.windows.win_file:
+    path: C:\Secret
+    state: directory
+
+# Restrict Access to this directory exclusively to the Administrator user
+- name: Allowing Administrator access to this directory
+  ansible.windows.win_acl:
+    path: C:\Secret
+    user: avl\Administrator
+    rights: FullControl
+    type: Allow
+    state: present
+    inherit: ContainerInherit, ObjectInherit
+
+# Making the Secret folder Hidden
+- name: Set the Hidden attribute on the Secret file
+  ansible.windows.win_powershell:
+    script: |
+      $path = "C:\\Secret"
+      $file = Get-Item -Path $path
+      $file.Attributes = $file.Attributes -bor [System.IO.FileAttributes]::Hidden

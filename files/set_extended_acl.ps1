@@ -1,6 +1,6 @@
 # Define source & destination objects, and the right GUID
-$srcobj = (Get-ADGroup -Identity "Navy IT").sid
-$dstobj = (Get-ADGroup -Identity "Admirals").DistinguishedName
+$srcobj = (Get-ADUSer -Identity "amelia.doppler").sid
+$dstobj = (Get-ADUser -Identity "james.norrington").DistinguishedName
 $extended_right_guid = "00299570-246d-11d0-a768-00aa006e0529"
 # Initialize Class Objects
 $dstacl = [ADSI]("LDAP://" + $dstobj)

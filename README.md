@@ -60,6 +60,7 @@ Add the following vulns/attacks:
 Ansible
 - consider using become to handle workstation admin tasks?
 - fix workstation catastrophe
+- stop systems from updating
 
 Install
 - deal with cryptography depreciation warnings

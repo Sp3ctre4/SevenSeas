@@ -11,6 +11,7 @@
   - role: SetTimeZone
   - role: SetFirewallState
   - role: SetDefenderOff
+  - role: StopUpdates
   - role: CreateSecretFolder
   - role: OrganizeRoyalNavy
   - role: RecruitNavySailors
@@ -54,6 +55,7 @@
     localadmin: 'SEVENSEAS\navysvc'
   roles:
   - role: SetFirewallState
+  - role: StopUpdates
   - role: EnableRemoting
   - role: SetLocalAdmin
 
@@ -64,6 +66,7 @@
     - vars-chest.yml
   roles:
   - role: SetFirewallState
+  - role: StopUpdates
   - role: EnableRemoting
   - role: AddLocalUser
 #  - role: InstallFirefox

@@ -61,10 +61,9 @@
   tags: workstations
   vars_files:
     - vars-chest.yml
-  vars:
-    localadmin: 'SEVENSEAS\amelia.doppler'
   roles:
   - role: SetFirewallState
   - role: EnableRemoting
+  - role: AddLocalUser
 #  - role: InstallFirefox
 #  - role: UploadFirefoxProfile

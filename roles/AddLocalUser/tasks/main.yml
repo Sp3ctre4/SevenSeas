@@ -1,0 +1,7 @@
+- name: Ensure user amelia is present
+  ansible.windows.win_user:
+    name: it.support
+    password: swordfish!
+    state: present
+    groups:
+      - Users
